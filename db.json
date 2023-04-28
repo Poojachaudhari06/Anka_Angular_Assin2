@@ -1,0 +1,39 @@
+{
+  "list": [
+    {
+      "firstName": "Jung",
+      "lastName": "kook",
+      "gender": "male",
+      "dob": "1996-06-12",
+      "select_role": "Developer",
+      "id": 2
+    },
+    {
+      "firstName": "meghna",
+      "lastName": "Bansod",
+      "gender": "female",
+      "dob": "2001-08-26",
+      "select_role": "Manager",
+      "id": 4
+    },
+    {
+      "firstName": "Pooja",
+      "lastName": "Chaudhari",
+      "gender": "female",
+      "dob": "2023-04-23",
+      "select_role": "Developer",
+      "id": 8
+    },
+    {
+      "firstName": "kmklmlrf",
+      "lastName": "lmlkmel",
+      "gender": "male",
+      "dob": "2023-04-11",
+      "select_role": "Tester",
+      "id": 9
+    }
+  ],
+  "get": [
+    {}
+  ]
+}

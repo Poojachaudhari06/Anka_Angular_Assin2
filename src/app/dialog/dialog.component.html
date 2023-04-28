@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Employee Detail</h1>
+<div mat-dialog-content>
+   <form [formGroup]= "employeeform">
+    <mat-form-field appearance="outline">
+        <mat-label>First NAME</mat-label>
+        <input formControlName="firstName" matInput placeholder="firstName">
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <mat-error *ngIf="employeeform.get('firstName')?.hasError('required')">First Name is required</mat-error>
+        <mat-error *ngIf="employeeform.get('firstName')?.hasError('pattern')">First Name should be character</mat-error>
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+        <mat-label>Last NAME</mat-label>
+        <input formControlName="lastName" matInput placeholder="lastName">
+        <mat-error *ngIf="employeeform.get('lastName')?.hasError('required')">Last Name is required</mat-error>
+        <mat-error *ngIf="employeeform.get('lastName')?.hasError('pattern')">Last Name should be character </mat-error>
+
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+       </mat-form-field>
+       <mat-radio-group aria-label="Select an option" formControlName="gender">
+        <mat-label>Gender</mat-label>
+        <mat-radio-button value="male">male</mat-radio-button>
+        <mat-radio-button value="female">female</mat-radio-button>
+        <mat-error *ngIf="employeeform.get('gender')?.hasError('required')">Selection is required</mat-error>
+       </mat-radio-group>
+    
+       
+
+       <mat-form-field appearance="outline">
+        <mat-label>Date of Birth</mat-label>
+        <input  formControlName="dob" matInput type="date">
+        <mat-error *ngIf="employeeform.get('dob')?.hasError('required')">Date is required</mat-error>
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+       </mat-form-field>
+
+      
+       <mat-form-field appearance="fill">
+        <mat-label>Select Role</mat-label>
+        <mat-select formControlName="select_role" required>
+          <mat-option *ngFor= "let role of roles" [value]="role.viewValue">
+            {{role.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="employeeform.get('select_role')?.hasError('required')">Selection role is required</mat-error>
+      </mat-form-field>
+   </form>
+</div>
+<div mat-dialog-actions [align]= "'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button mat-raised-button color="primary" (click)= "addEmployee()">{{actionBtn}}</button>
+</div>
